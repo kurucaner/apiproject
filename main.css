@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Monoton&family=Rampart+One&family=Shadows+Into+Light+Two&display=swap");
 body {
-  background: white;
+  background: url("/images/vector-seamless-pattern-summer-winter-activities-sports-recreation-leisure-games-icons-thin-line-art-flat-style-122825670.png");
   margin: 0;
   font-family: "Lato";
 }
@@ -13,7 +13,7 @@ body {
 
 /* NAVIGATION BAR STARTS */
 .navbar {
-  height: 50px;
+  height: 20px;
   background: grey;
   padding: 1em;
   -webkit-box-shadow: 0px 8px 8px -6px rgba(0, 0, 0, 0.5);
@@ -44,12 +44,13 @@ body {
 
 .primary-nav {
   color: orange;
-  font-size: 1.5em;
+  font-size: 1.8em;
   margin-right: 45px;
 }
 
 .secondary-nav {
-  font-size: 1.5em;
+  font-size: 1em;
+  color: white;
 }
 
 .title {
@@ -164,7 +165,7 @@ section {
   overflow: hidden;
   padding: 50px;
   -webkit-box-shadow: 0 8px 8px -6px rgba(0, 0, 0, 0.5),
-  0 -8px 8px -6px rgba(0, 0, 0, 0.5);
+    0 -8px 8px -6px rgba(0, 0, 0, 0.5);
   box-shadow: 0 8px 8px -6px rgba(0, 0, 0, 0.5) 0 -8px 8px -6px rgba(0, 0, 0, 0.5);
 }
 
@@ -193,6 +194,41 @@ section {
   font-size: 1.5em;
 }
 
+.info {
+  float: left;
+  width: 42%;
+  background: #4b5baf;
+  padding: 30px;
+  border-radius: 20px;
+  color: antiquewhite;
+  text-align: center;
+}
+
+.info img {
+  width: 4em;
+  height: 4.5em;
+  border-radius: 2em;
+}
+
+@media screen and (max-width: 992px) {
+  .info {
+    float: left;
+    width: 67%;
+    background: #4b5baf;
+    padding: 30px;
+    border-radius: 20px;
+    color: antiquewhite;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .info img {
+    width: 4em;
+    height: 4.5em;
+    border-radius: 2em;
+  }
+}
+
 /* TESTIMONIALS ENDS */
 
 /* COPYRIGHT STARTS */
@@ -201,17 +237,16 @@ section {
   height: 5px;
 }
 
-.copyright-left{
+.copyright-left {
   float: left;
 }
-.copyright-right{
+.copyright-right {
   float: right;
 }
 
 /* COPYRIGHT ENDS */
 
-
-.container-fulid{
+.container-fulid {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 40px;
@@ -224,7 +259,7 @@ section {
   margin-top: 115px;
 }
 
-.button1{
+.button1 {
   background: #8bc34a;
   border: solid 1px #52ca58;
   border-radius: 5px;
@@ -234,13 +269,12 @@ section {
   padding-bottom: 5px;
   padding-top: 5px;
 }
-.button1:hover{
+.button1:hover {
   background: #7daf42;
   border: solid 1px #3d9242;
 }
 
-
-.button2{
+.button2 {
   background: #f44336;
   border: solid 1px #c13429;
   border-radius: 5px;
@@ -251,44 +285,8 @@ section {
   padding-top: 5px;
   color: white;
 }
-.button2:hover{
+.button2:hover {
   background: #c33429;
   border: solid 1px #982e26;
   color: white;
-}
-
-.info {
-  float: left;
-  width: 42%;
-  background: #4b5baf;
-  padding: 30px;
-  border-radius: 20px;
-  color: antiquewhite;
-  text-align: center;
-}
-
-.info img{
-  width: 4em;
-  height: 4.5em;
-  border-radius: 2em;
-}
-
-
-@media screen and (max-width: 992px) {
-  .info {
-   float: left;
-   width: 67%;
-   background: #4b5baf;
-   padding: 30px;
-   border-radius: 20px;
-   color: antiquewhite;
-   text-align: center;
-   margin-bottom: 15px;
- }
-
- .info img{
-    width: 4em;
-    height: 4.5em;
-    border-radius: 2em;
-  }
 }
