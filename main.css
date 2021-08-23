@@ -6,15 +6,9 @@ body {
 }
 
 .navbar {
+  height: 70px;
   background: grey;
   padding: 1em;
-}
-
-.navbar {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-shadow: 0px 8px 8px -6px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 8px 8px -6px rgba(0, 0, 0, 0.5);
 }
@@ -28,6 +22,34 @@ a {
   font-weight: bold;
   color: white;
   font-size: 1.2em;
+}
+
+.title {
+  font-family: "Rampart One", sans-serif;
+  color: orange;
+}
+
+.home {
+  color: white;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
 }
 
 ul {
@@ -49,8 +71,23 @@ ul {
   padding: 0;
 }
 
+.navbar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navbar a {
+  padding: 10px;
+  margin: 0 5px;
+}
+
+.navbar .home:hover {
+  border-bottom: 2px #fff solid;
+}
+
 section {
-  padding: 5em 2em;
+  padding: 5em 5em;
 }
 
 .hero {
@@ -68,17 +105,23 @@ section {
 
 .flip-card-inner {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 250px;
+  height: 350px;
+  border-color: #ffcb05;
   text-align: center;
-  -webkit-transition: -webkit-transform 0.6s;
-  transition: -webkit-transform 0.6s;
-  transition: transform 0.6s;
-  transition: transform 0.6s, -webkit-transform 0.6s;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card-inner:hover {
+  -webkit-box-shadow: 0 8px 16px 0 yellow;
+          box-shadow: 0 8px 16px 0 yellow;
 }
 
 .flip-card:hover .flip-card-inner {
@@ -96,13 +139,13 @@ section {
 }
 
 .flip-card-front {
-  background-color: #bbb;
+  background-color: white;
   color: black;
 }
 
 .flip-card-back {
-  background-color: #2980b9;
-  color: white;
+  background-color: white;
+  color: black;
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
@@ -110,8 +153,8 @@ section {
 /* flipping card end here */
 .testimonials-section {
   background: grey;
-  -webkit-box-shadow: 0px 8px 8px -6px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 8px 8px -6px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 8px 8px -6px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 8px 8px -6px rgba(0, 0, 0, 0.5);
 }
 
 .testimonials-section li {
@@ -120,5 +163,13 @@ section {
   padding: 2em 2em;
   margin: 0 auto 5em auto;
   border-radius: 1em;
+  -webkit-box-shadow: 0px 8px 8px -6px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 8px 8px -6px rgba(0, 0, 0, 0.5);
+}
+
+.testimonials-section li img {
+  width: 4em;
+  height: 4.5em;
+  border-radius: 2em;
 }
 /*# sourceMappingURL=main.css.map */
