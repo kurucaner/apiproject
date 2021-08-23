@@ -1,54 +1,74 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <script defer src="app.js"></script>
+    <title>JOKER CARD by Caner | Tristen</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="container">
+        <a class="logo" href="#">by <span style="color:orange">Caner | Tristen</span></a>
 
-        <link
-        href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap"
-        rel="stylesheet"
-        />
-        <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-        />
+        <nav>
+          <ul class="primary-nav">
+            <li><a class="title" href="#">JOKER CARD</a></li>
+            <li><a class="home" href="#">HOME</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
 
-        <link rel="stylesheet" href="./style.css">
-        <script defer src="./app.js"></script>
-
-        <title>API Project</title>
-    </head>
-    <body>
-        <div id="content">
-            <div id="top-div">
-                <h1>Joke Cards</h1>
-                <h3>Caner | Trestin</h3>
+    <section class="hero">
+      <div class="container">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <p class="setup">Front card</p>
             </div>
-
-            <div id="side-div">
-                <div id="side-sections">
-                    <div id="site-description">
-                        <h1>Welcome to Joke Cards!</h1>
-                        <h2>A website made by Caner Kuru and Trestin Ishak for our Phase 1 API Project.</h2>
-                        <h3>Sort through the joke cards and like your favorites!</h3>
-                    </div>
-                    <div id="sort-cards">
-                        <p>Hello!</p>
-                    </div>
-                    <div id="add-cards">
-                        <p>Hello.</p>
-                    </div>
-                </div>
+            <div class="flip-card-back">
+              <p class="puncline">Back card</p>
             </div>
-
-            <div id="jokes-div">
-                <div id="cards">
-                </div>
-            </div>
+          </div>
         </div>
-    </body>
+        <h3>WOULD YOU LIKE AN ANOTHER ONE?</h3>
+        <button type="button" class="button1">YES!</button>
+        <button type="button" class="button2">NO!</button>
+      </div>
+    </section>
+
+    <section class="testimonials-section">
+      <div class="container">
+        <ul>
+          <li>
+            <img src="#" alt="Person">
+
+            <blockquote>CANER'S BOARD</blockquote>
+            <cite>- Caner Kuru</cite>
+          </li>
+
+          <li>
+            <img src="#" alt="Person">
+
+            <blockquote>CANER'S BOARD</blockquote>
+            <cite>- Tristen</cite>
+          </li>
+        </ul>
+      </div>
+    </section>
+    
+    <section class="copyright-section">
+      <div class="container">
+        <div class="copyright-left">
+          <p>Copyright by bla bla bla</p>
+        </div>
+        <div class="copyright-right">
+          <a href="#">About Us</a>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
