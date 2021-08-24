@@ -155,5 +155,6 @@ init();
 
 // ** MUSIC PLAYER STARTS **
 var x = document.getElementById("iframeAudio").autoplay;
-
+x.autoplay = true;
+x.load();
 // ** MUSIC PLAYER ENDS **
