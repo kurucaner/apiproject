@@ -12,6 +12,17 @@ function setJokeCard() {
       punchline.textContent = joke.delivery;
       setup.dataset.lastId = 1;
       setup.dataset.currentId = joke.id;
+
+      fetch(`${USER_DATA}/likes`)
+        .then(response => response.json())
+        .then(count => {
+            const filter = count.filter(wanted => wanted.id === setup.dataset.currentId);
+            if (filter.length > 0) {
+                document.getElementById(`joke-rating`).textContent = `Rating: ${filter[0].likes}`;
+            } else {
+                document.getElementById(`joke-rating`).textContent = `Rating: 0`;
+            }
+        });
     });
 }
 
@@ -27,6 +38,18 @@ function changeCard() {
         punchline.textContent = joke.delivery;
         setup.dataset.lastId = setup.dataset.currentId;
         setup.dataset.currentId = joke.id;
+        console.log(joke.id)
+
+        fetch(`${USER_DATA}/likes`)
+        .then(response => response.json())
+        .then(count => {
+            const filter = count.filter(wanted => wanted.id === setup.dataset.currentId);
+            if (filter.length > 0) {
+                document.getElementById(`joke-rating`).textContent = `Rating: ${filter[0].likes}`;
+            } else {
+                document.getElementById(`joke-rating`).textContent = `Rating: 0`;
+            }
+        });
       });
   });
 
@@ -38,6 +61,17 @@ function changeCard() {
         punchline.textContent = joke.delivery;
         setup.dataset.lastId = setup.dataset.currentId;
         setup.dataset.currentId = joke.id;
+
+        fetch(`${USER_DATA}/likes`)
+        .then(response => response.json())
+        .then(count => {
+            const filter = count.filter(wanted => wanted.id === setup.dataset.currentId);
+            if (filter.length > 0) {
+                document.getElementById(`joke-rating`).textContent = `Rating: ${filter[0].likes}`;
+            } else {
+                document.getElementById(`joke-rating`).textContent = `Rating: 0`;
+            }
+        });
       });
   });
 }
@@ -45,18 +79,21 @@ function changeCard() {
 function createButtons() {
   const cardFront = document.querySelector(`.flip-card-front`);
   const cardBack = document.querySelector(`.flip-card-back`);
+
   const cardBase = document.createElement(`div`);
+
   const like = document.createElement(`div`);
   const dislike = document.createElement(`div`);
-  const comment = document.createElement(`form`);
+  const rating = document.createElement(`div`);
 
   cardBase.className = `flip-card-base`;
   like.id = `like-button`;
   dislike.id = `dislike-button`;
-  comment.id = `comment-form`;
+  rating.id = `joke-rating`;
 
   like.textContent = `♥`;
   dislike.textContent = `✖`;
+  rating.textContent = `NaN`;
 
   like.addEventListener("click", () => {
     fetch(`${USER_DATA}/likes`)
@@ -76,6 +113,7 @@ function createButtons() {
             .then((response) => response.json())
             .then((data) => {
               console.log("Success:", data);
+              document.getElementById(`joke-rating`).textContent = `Rating: ${data.likes}`;
             })
             .catch((error) => {
               console.error("Error:", error);
@@ -91,6 +129,7 @@ function createButtons() {
             .then((response) => response.json())
             .then((data) => {
               console.log("Success:", data);
+              document.getElementById(`joke-rating`).textContent = `Rating: ${data.likes}`;
             })
             .catch((error) => {
               console.error("Error:", error);
@@ -117,6 +156,7 @@ function createButtons() {
             .then((response) => response.json())
             .then((data) => {
               console.log("Success:", data);
+              document.getElementById(`joke-rating`).textContent = `Rating: ${data.likes}`;
             })
             .catch((error) => {
               console.error("Error:", error);
@@ -132,6 +172,7 @@ function createButtons() {
             .then((response) => response.json())
             .then((data) => {
               console.log("Success:", data);
+              document.getElementById(`joke-rating`).textContent = `Rating: ${data.likes}`;
             })
             .catch((error) => {
               console.error("Error:", error);
@@ -140,15 +181,15 @@ function createButtons() {
       });
   });
 
-  cardBase.append(dislike, like, comment);
+  cardBase.append(dislike, rating, like);
   cardBack.appendChild(cardBase);
 //   cardFront.appendChild(cardBase.cloneNode(true));
 }
 
 function init() {
   setJokeCard();
-  changeCard();
   createButtons();
+  changeCard();
 }
 
 init();
@@ -156,7 +197,7 @@ init();
 // ** MUSIC PLAYER STARTS **
 document.addEventListener('click', musicPlay);
 function musicPlay() {
-    document.getElementById('playAudio').play();
-    document.removeEventListener('click', musicPlay);
+    // document.getElementById('playAudio').play();
+    // document.removeEventListener('click', musicPlay);
 }
 // ** MUSIC PLAYER ENDS **
