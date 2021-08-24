@@ -15,7 +15,7 @@ body {
 /* NAVIGATION BAR STARTS */
 .navbar {
   height: 20px;
-  background: grey;
+  background: linear-gradient(to right, #00AAFF, rgb(240, 240, 87));
   padding: 1em;
   -webkit-box-shadow: 0px 8px 8px -6px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 8px 8px -6px rgba(0, 0, 0, 0.5);
@@ -164,7 +164,7 @@ section {
 /* TESTIMONIALS STARTS */
 
 .testimonials-section {
-  background: grey;
+  background: linear-gradient(to right, #00AAFF, rgb(240, 240, 87));
   overflow: hidden;
   padding: 50px;
   -webkit-box-shadow: 0 8px 8px -6px rgba(0, 0, 0, 0.5),
@@ -177,7 +177,7 @@ section {
 }
 
 .testimonials-section li {
-  background: #006bd6;
+  background: wh;
   text-align: center;
   padding: 2em 2em;
   margin: 1em 5em;
@@ -194,13 +194,13 @@ section {
 
 .blockquotes {
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 25px;
 }
 
 .info {
   float: left;
   width: 42%;
-  background: #4b5baf;
+  background: linear-gradient(to right, rgb(24, 115, 138), #107e6b);
   padding: 30px;
   border-radius: 20px;
   color: antiquewhite;
