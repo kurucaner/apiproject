@@ -242,7 +242,7 @@ section {
   .info {
     float: left;
     width: 67%;
-    background: #4b5baf;
+    background: linear-gradient(to right, #00AAFF, rgb(240, 240, 87));
     padding: 30px;
     border-radius: 20px;
     color: antiquewhite;
