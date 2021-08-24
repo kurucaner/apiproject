@@ -154,11 +154,9 @@ function init() {
 init();
 
 // ** MUSIC PLAYER STARTS **
-let isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-  if (!isChrome){
-      document.querySelector('#iframeAudio').remove()
-  }
-  else {
-     document.querySelector('#playAudio').remove() // just to make sure that it will not have 2x audio in the background 
-  }
+document.addEventListener('click', musicPlay);
+function musicPlay() {
+    document.getElementById('playAudio').play();
+    document.removeEventListener('click', musicPlay);
+}
 // ** MUSIC PLAYER ENDS **
