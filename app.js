@@ -154,9 +154,9 @@ function init() {
 init();
 
 // ** MUSIC PLAYER STARTS **
-window.addEventListener("DOMContentLoaded", event => {
+window.addEventListener("click", event => {
   const audio = document.querySelector("audio");
-  audio.volume = 0.2;
+  audio.volume = 0.4;
   audio.play();
 });
 
