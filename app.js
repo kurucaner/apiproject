@@ -156,7 +156,6 @@ init();
 // ** MUSIC PLAYER STARTS **
 window.addEventListener("click", event => {
   const audio = document.querySelector("audio");
-  audio.volume = 0.4;
   audio.play();
 });
 
