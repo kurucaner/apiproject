@@ -138,6 +138,8 @@ section {
 
 .flip-card-front,
 .flip-card-back {
+  display: flex;
+  flex-direction: column;
   font-size: 1.8em;
   font-family: 'Rampart One';
   position: absolute;
@@ -157,6 +159,29 @@ section {
   color: black;
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
+}
+
+.setup, .puncline {
+  padding: 5px;
+}
+
+.flip-card-base {
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(68, 68, 68, 0.116);
+  width: 100%;
+  height: 20%;
+}
+
+#like-button, #dislike-button {
+  color: red;
+  width: 5%;
+  height: 100%;
+  margin: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 /* FLIPPING CARDS ENDS */

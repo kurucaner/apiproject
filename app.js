@@ -50,7 +50,7 @@ function createButtons() {
   const dislike = document.createElement(`div`);
   const comment = document.createElement(`form`);
 
-  cardBase.class = `flip-card-base`;
+  cardBase.className = `flip-card-base`;
   like.id = `like-button`;
   dislike.id = `dislike-button`;
   comment.id = `comment-form`;
@@ -140,9 +140,9 @@ function createButtons() {
       });
   });
 
-  cardBase.append(like, dislike, comment);
+  cardBase.append(dislike, like, comment);
   cardBack.appendChild(cardBase);
-  cardFront.appendChild(cardBase.cloneNode(true));
+//   cardFront.appendChild(cardBase.cloneNode(true));
 }
 
 function init() {
