@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="main.css" defer/>
     <script defer src="app.js"></script>
     <title>JOKER CARD by Caner | Trestin</title>
   </head>
@@ -31,10 +31,10 @@
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <p class="setup">Front card</p>
+                <p class="setup">Front</p>
               </div>
               <div class="flip-card-back">
-                <p class="puncline">Back card</p>
+                <p class="puncline">Back</p>
               </div>
             </div>
           </div>
@@ -80,15 +80,17 @@
     <footer class="copyright-section">
       <div class="container-fulid">
         <div class="copyright-left">
-          <p>Copyright by bla bla bla</p>
+          <p class="footer">© 2020 All rights reserved.</p>
         </div>
         <div class="copyright-right">
-          <p><a href="#">About Us</a></p>
+          <p class="footer"><a href="about.html">About Us</a></p>
         </div>
       </div>
     </footer>
-    <audio controls autoplay>
-      <source src="hagenda.mp3" type="audio/mpeg" />
-    </audio>
+    <iframe src="hagenda.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+    </iframe>
+    <audio autoplay loop  id="playAudio">
+      <source src="hagenda.mp3">
+      </audio>
   </body>
 </html>
