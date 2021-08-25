@@ -7,7 +7,7 @@ const USER_DATA = `http://localhost:3000`;
 const setup = document.querySelector(`.setup`);
 const punchline = document.querySelector(`.puncline`);
 const jokeType = document.querySelector(`.joke-type`);
-const filterItems = [`Programming`, `Misc`, `Pun`, `Spooky`, `Christmas`];
+const filterItems = [`Any`, `Most Likes DOES NOT WORK`, `Programming`, `Misc`, `Pun`, `Spooky`, `Christmas`];
 
 function setJokeCard() {
   fetch(`${JOKES_API}`)
@@ -202,15 +202,17 @@ function createFilterButtons() {
     const p3 = document.createElement(`p`);
     const p4 = document.createElement(`p`);
     const p5 = document.createElement(`p`);
-    const pArray = [p1, p2, p3, p4, p5];
+    const p6 = document.createElement(`p`);
+    const p7 = document.createElement(`p`);
+    const pArray = [p1, p2, p3, p4, p5, p6, p7];
 
-    filterList.append(p1, p2, p3, p4, p5);
+    filterList.append(p1, p2, p3, p4, p5, p6, p7);
     hero.append(filterButton, filterList);
 
     filterButton.className = `filter-button`;
     filterButton.textContent = `FILTER`;
     filterList.className = `filter-hidden`;
-    [p1.textContent, p2.textContent, p3.textContent, p4.textContent, p5.textContent] = [...filterItems];
+    [p1.textContent, p2.textContent, p3.textContent, p4.textContent, p5.textContent, p6.textContent, p7.textContent] = [...filterItems];
 
     filterButton.addEventListener(`click`, () => {
         if (filterList.className === `filter-visible`) {
@@ -227,7 +229,11 @@ function setFilter() {
 
     pArray.forEach(p => {
         p.addEventListener(`click`, () => {
-            CURRENT_FILTER = `${NO_FILTER}/${p.textContent}${REQUIRED_FILTER}`
+          if(p.textContent !== `Most Likes DOES NOT WORK`) {
+            CURRENT_FILTER = `${NO_FILTER}/${p.textContent}${REQUIRED_FILTER}`;
+          } else {
+            console.log(`error: Most Likes is not finished`);
+          };
         });
     });
 };
