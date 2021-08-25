@@ -12,6 +12,56 @@ body {
   padding: 0 40px;
 }
 
+.container-fulid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 85px;
+}
+
+a {
+  text-decoration: none;
+  color: red;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  padding: 5em 5em;
+}
+
+.hero {
+  text-align: center;
+  height: 72vh;
+}
+
 /* NAVIGATION BAR STARTS */
 .navbar {
   height: 20px;
@@ -56,52 +106,15 @@ body {
 .title {
   font-weight: bold;
   color: #74bbf1;
-    /* orange */
+  /* orange */
 }
 
 .home {
   color: white;
-    /* white */
+  /* white */
 }
 
 /* NAVIGATION BAR ENDS */
-
-a {
-  text-decoration: none;
-  color: red;
-}
-
-.flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 100%;
-}
-
-ul {
-  list-style: none;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-section {
-  padding: 5em 5em;
-}
-
-.hero {
-  text-align: center;
-  height: 72vh;
-}
 
 /* FLIPPING CARDS STARTS */
 .flip-card {
@@ -144,7 +157,7 @@ section {
   display: flex;
   flex-direction: column;
   font-size: 1.4em;
-  font-family: 'Rampart One';
+  font-family: "Rampart One";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -158,13 +171,14 @@ section {
 }
 
 .flip-card-back {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);
   color: black;
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 
-.setup, .puncline {
+.setup,
+.puncline {
   padding: 5px;
 }
 
@@ -179,7 +193,8 @@ section {
   height: 20%;
 }
 
-#like-button, #dislike-button {
+#like-button,
+#dislike-button {
   color: black;
   width: 10%;
   height: 50%;
@@ -198,8 +213,42 @@ section {
   float: left;
 }
 
-#like-button:hover, #dislike-button:hover {
+#like-button:hover,
+#dislike-button:hover {
   background-color: #f6ae2d;
+  color: white;
+}
+
+.button1 {
+  margin: 15px;
+  background: #e4e4e4af;
+  border: solid 3px #000000;
+  border-radius: 10px;
+  padding-left: 15px;
+  width: 65px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.button1:hover {
+  background: #f6ae2d;
+  color: white;
+}
+
+.button2 {
+  margin: 15px;
+  background: #e4e4e4af;
+  border: solid 3px #000000;
+  border-radius: 10px;
+  width: 65px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  color: rgb(0, 0, 0);
+}
+.button2:hover {
+  background: #f6ae2d;
   color: white;
 }
 
@@ -276,7 +325,7 @@ section {
   .info {
     float: left;
     width: 67%;
-    background: linear-gradient(to right, #00AAFF, rgb(240, 240, 87));
+    background: linear-gradient(to right, #00aaff, rgb(240, 240, 87));
     padding: 30px;
     border-radius: 20px;
     color: antiquewhite;
@@ -312,49 +361,3 @@ section {
 }
 
 /* COPYRIGHT ENDS */
-
-.container-fulid {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 85px;
-}
-
-.button1 {
-  margin: 15px;
-  background: #e4e4e4af;
-  border: solid 3px #000000;
-  border-radius: 10px;
-  padding-left: 15px;
-  width: 65px;
-  padding-right: 15px;
-  padding-bottom: 20px;
-  padding-top: 20px;
-}
-.button1:hover {
-  background: #f6ae2d;
-  color: white;
-}
-
-.button2 {
-  margin: 15px;
-  background: #e4e4e4af;
-  border: solid 3px #000000;
-  border-radius: 10px;
-  width: 65px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 20px;
-  padding-top: 20px;
-  color: rgb(0, 0, 0);
-}
-.button2:hover {
-  background: #f6ae2d;
-  color: white;
-}
