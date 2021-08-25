@@ -1,8 +1,13 @@
 const JOKES_API = `https://v2.jokeapi.dev/joke/Any?safe-mode&type=twopart`;
+const NO_FILTER = `https://v2.jokeapi.dev/joke`;
+const REQUIRED_FILTER = `?safe-mode&type=twopart`;
+let CURRENT_FILTER = `https://v2.jokeapi.dev/joke/Any?safe-mode&type=twopart`;
 const USER_DATA = `http://localhost:3000`;
 
 const setup = document.querySelector(`.setup`);
 const punchline = document.querySelector(`.puncline`);
+const jokeType = document.querySelector(`.joke-type`);
+const filterItems = [`Programming`, `Misc`, `Pun`, `Spooky`, `Christmas`];
 
 function setJokeCard() {
   fetch(`${JOKES_API}`)
@@ -12,6 +17,7 @@ function setJokeCard() {
       punchline.textContent = joke.delivery;
       setup.dataset.lastId = 1;
       setup.dataset.currentId = joke.id;
+      jokeType.textContent = `Joke Type: ${joke.category}`;
 
       fetch(`${USER_DATA}/likes`)
         .then(response => response.json())
@@ -24,21 +30,21 @@ function setJokeCard() {
             }
         });
     });
-}
+};
 
-function changeCard() {
+function changeJokeCard() {
   const next = document.querySelector(`button.button1`);
   const prev = document.querySelector(`button.button2`);
 
   next.addEventListener(`click`, () => {
-    fetch(`${JOKES_API}`)
+    fetch(`${CURRENT_FILTER}`)
       .then((response) => response.json())
       .then((joke) => {
         setup.textContent = joke.setup;
         punchline.textContent = joke.delivery;
         setup.dataset.lastId = setup.dataset.currentId;
         setup.dataset.currentId = joke.id;
-        console.log(joke.id)
+        jokeType.textContent = `Joke Type: ${joke.category}`;
 
         fetch(`${USER_DATA}/likes`)
         .then(response => response.json())
@@ -61,6 +67,7 @@ function changeCard() {
         punchline.textContent = joke.delivery;
         setup.dataset.lastId = setup.dataset.currentId;
         setup.dataset.currentId = joke.id;
+        jokeType.textContent = `Joke Type: ${joke.category}`;
 
         fetch(`${USER_DATA}/likes`)
         .then(response => response.json())
@@ -74,9 +81,9 @@ function changeCard() {
         });
       });
   });
-}
+};
 
-function createButtons() {
+function createCardButtons() {
   const cardFront = document.querySelector(`.flip-card-front`);
   const cardBack = document.querySelector(`.flip-card-back`);
 
@@ -184,13 +191,54 @@ function createButtons() {
   cardBase.append(dislike, rating, like);
   cardBack.appendChild(cardBase);
 //   cardFront.appendChild(cardBase.cloneNode(true));
-}
+};
+
+function createFilterButtons() {
+    const hero = document.querySelector(`.hero`);
+    const filterButton = document.createElement(`button`);
+    const filterList = document.createElement(`div`);
+    const p1 = document.createElement(`p`);
+    const p2 = document.createElement(`p`);
+    const p3 = document.createElement(`p`);
+    const p4 = document.createElement(`p`);
+    const p5 = document.createElement(`p`);
+    const pArray = [p1, p2, p3, p4, p5];
+
+    filterList.append(p1, p2, p3, p4, p5);
+    hero.append(filterButton, filterList);
+
+    filterButton.className = `filter-button`;
+    filterButton.textContent = `FILTER`;
+    filterList.className = `filter-hidden`;
+    [p1.textContent, p2.textContent, p3.textContent, p4.textContent, p5.textContent] = [...filterItems];
+
+    filterButton.addEventListener(`click`, () => {
+        if (filterList.className === `filter-visible`) {
+            filterList.className = `filter-hidden`;
+        } else {
+            filterList.className = `filter-visible`;
+        }
+    });
+};
+
+function setFilter() {
+    const pNode = document.querySelector(`.hero`).lastChild.children;
+    const pArray = Array.from(pNode);
+
+    pArray.forEach(p => {
+        p.addEventListener(`click`, () => {
+            CURRENT_FILTER = `${NO_FILTER}/${p.textContent}${REQUIRED_FILTER}`
+        });
+    });
+};
 
 function init() {
-  setJokeCard();
-  createButtons();
-  changeCard();
-}
+    setJokeCard();
+    createCardButtons();
+    createFilterButtons();
+    setFilter();
+    changeJokeCard();
+};
 
 init();
 
