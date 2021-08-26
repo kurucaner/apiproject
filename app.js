@@ -2,7 +2,7 @@ const JOKES_API = `https://v2.jokeapi.dev/joke/Any?safe-mode&type=twopart`;
 const NO_FILTER = `https://v2.jokeapi.dev/joke`;
 const REQUIRED_FILTER = `?safe-mode&type=twopart`;
 let CURRENT_FILTER = `https://v2.jokeapi.dev/joke/Any?safe-mode&type=twopart`;
-const USER_DATA = `https://raw.githubusercontent.com/kurucaner/apiproject/main/db.json`;
+const USER_DATA = `http://localhost:3000`;
 
 const setup = document.querySelector(`.setup`);
 const punchline = document.querySelector(`.puncline`);
