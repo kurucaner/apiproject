@@ -25,7 +25,7 @@ function setJokeCard() {
       punchline.textContent = joke.delivery;
       setup.dataset.lastId = 1;
       setup.dataset.currentId = joke.id;
-      jokeType.textContent = `Joke Type: ${joke.category}`;
+
 
       fetch(`${USER_DATA}/likes`)
         .then((response) => response.json())
@@ -56,7 +56,7 @@ function changeJokeCard() {
         punchline.textContent = joke.delivery;
         setup.dataset.lastId = setup.dataset.currentId;
         setup.dataset.currentId = joke.id;
-        jokeType.textContent = `Joke Type: ${joke.category}`;
+
 
         fetch(`${USER_DATA}/likes`)
           .then((response) => response.json())
@@ -83,7 +83,7 @@ function changeJokeCard() {
         punchline.textContent = joke.delivery;
         setup.dataset.lastId = setup.dataset.currentId;
         setup.dataset.currentId = joke.id;
-        jokeType.textContent = `Joke Type: ${joke.category}`;
+
 
         fetch(`${USER_DATA}/likes`)
           .then((response) => response.json())
