@@ -27,7 +27,7 @@ function setJokeCard() {
                 document.getElementById(`joke-rating`).textContent = `Rating: ${filter[0].likes}`;
             } else {
                 document.getElementById(`joke-rating`).textContent = `Rating: 0`;
-            }
+            };
         });
     });
 };
@@ -193,35 +193,35 @@ function createCardButtons() {
 //   cardFront.appendChild(cardBase.cloneNode(true));
 };
 
-function createFilterButtons() {
-    const hero = document.querySelector(`.hero`);
-    const filterButton = document.createElement(`button`);
-    const filterList = document.createElement(`div`);
-    const p1 = document.createElement(`p`);
-    const p2 = document.createElement(`p`);
-    const p3 = document.createElement(`p`);
-    const p4 = document.createElement(`p`);
-    const p5 = document.createElement(`p`);
-    const p6 = document.createElement(`p`);
-    const p7 = document.createElement(`p`);
-    const pArray = [p1, p2, p3, p4, p5, p6, p7];
+// function createFilterButtons() {
+//     const hero = document.querySelector(`.hero`);
+//     const filterButton = document.createElement(`button`);
+//     const filterList = document.createElement(`div`);
+//     const p1 = document.createElement(`p`);
+//     const p2 = document.createElement(`p`);
+//     const p3 = document.createElement(`p`);
+//     const p4 = document.createElement(`p`);
+//     const p5 = document.createElement(`p`);
+//     const p6 = document.createElement(`p`);
+//     const p7 = document.createElement(`p`);
+//     const pArray = [p1, p2, p3, p4, p5, p6, p7];
 
-    filterList.append(p1, p2, p3, p4, p5, p6, p7);
-    hero.append(filterButton, filterList);
+//     filterList.append(p1, p2, p3, p4, p5, p6, p7);
+//     hero.append(filterButton, filterList);
 
-    filterButton.className = `filter-button`;
-    filterButton.textContent = `FILTER`;
-    filterList.className = `filter-hidden`;
-    [p1.textContent, p2.textContent, p3.textContent, p4.textContent, p5.textContent, p6.textContent, p7.textContent] = [...filterItems];
+//     filterButton.className = `filter-button`;
+//     filterButton.textContent = `FILTER`;
+//     filterList.className = `filter-hidden`;
+//     [p1.textContent, p2.textContent, p3.textContent, p4.textContent, p5.textContent, p6.textContent, p7.textContent] = [...filterItems];
 
-    filterButton.addEventListener(`click`, () => {
-        if (filterList.className === `filter-visible`) {
-            filterList.className = `filter-hidden`;
-        } else {
-            filterList.className = `filter-visible`;
-        }
-    });
-};
+//     filterButton.addEventListener(`click`, () => {
+//         if (filterList.className === `filter-visible`) {
+//             filterList.className = `filter-hidden`;
+//         } else {
+//             filterList.className = `filter-visible`;
+//         }
+//     });
+// };
 
 function setFilter() {
     const pNode = document.querySelector(`.hero`).lastChild.children;
@@ -241,7 +241,7 @@ function setFilter() {
 function init() {
     setJokeCard();
     createCardButtons();
-    createFilterButtons();
+    // createFilterButtons();
     setFilter();
     changeJokeCard();
 };

@@ -65,8 +65,9 @@ section {
 /* NAVIGATION BAR STARTS */
 .navbar {
   height: 20px;
-  background: #f26419;
-  /* linear-gradient(to right, #00AAFF, rgb(240, 240, 87)) */
+  background: linear-gradient(to bottom, #8bd8ff, #3fbfff);
+  /* linear-gradient(to right, #00AAFF, rgb(240, 240, 87))
+  #f26419 */
   padding: 1em;
   -webkit-box-shadow: 0px 8px 8px -6px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 8px 8px -6px rgba(0, 0, 0, 0.5);
@@ -105,7 +106,7 @@ section {
 
 .title {
   font-weight: bold;
-  color: #74bbf1;
+  color: rgb(252, 125, 76);
   /* orange */
 }
 
@@ -187,8 +188,9 @@ section {
   bottom: 0px;
   display: flex;
   flex-direction: row;
-  background-color: #74bbf1;
-  /* rgba(68, 68, 68, 0.116); */
+  background: linear-gradient(to bottom, #3fbfff, #00AAFF);
+  /* rgba(68, 68, 68, 0.116); 
+  #74bbf1 */
   width: 100%;
   height: 20%;
 }
@@ -312,8 +314,9 @@ section {
 /* TESTIMONIALS STARTS */
 
 .testimonials-section {
-  background: #f26419;
-  /* linear-gradient(to right, #00AAFF, rgb(240, 240, 87)) */
+  background: linear-gradient(to bottom, #1fb4ff, #6857ff);
+  /* linear-gradient(to right, #00AAFF, rgb(240, 240, 87)) 
+  #f26419 */
   overflow: hidden;
   padding: 50px;
   -webkit-box-shadow: 0 8px 8px -6px rgba(0, 0, 0, 0.5),
@@ -349,7 +352,7 @@ section {
 .info {
   float: left;
   width: 42%;
-  background: #74bbf1;
+  background: linear-gradient(to bottom, rgb(241, 193, 116), rgb(247, 158, 98));
   /* linear-gradient(to right, rgb(24, 115, 138), #107e6b) */
   padding: 30px;
   border-radius: 20px;
