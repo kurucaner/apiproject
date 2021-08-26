@@ -2,12 +2,20 @@ const JOKES_API = `https://v2.jokeapi.dev/joke/Any?safe-mode&type=twopart`;
 const NO_FILTER = `https://v2.jokeapi.dev/joke`;
 const REQUIRED_FILTER = `?safe-mode&type=twopart`;
 let CURRENT_FILTER = `https://v2.jokeapi.dev/joke/Any?safe-mode&type=twopart`;
-const USER_DATA = `http://localhost:3000`;
+const USER_DATA = `https://raw.githubusercontent.com/kurucaner/apiproject/main/db.json`;
 
 const setup = document.querySelector(`.setup`);
 const punchline = document.querySelector(`.puncline`);
 const jokeType = document.querySelector(`.joke-type`);
-const filterItems = [`Any`, `Most Likes DOES NOT WORK`, `Programming`, `Misc`, `Pun`, `Spooky`, `Christmas`];
+const filterItems = [
+  `Any`,
+  `Most Likes DOES NOT WORK`,
+  `Programming`,
+  `Misc`,
+  `Pun`,
+  `Spooky`,
+  `Christmas`,
+];
 
 function setJokeCard() {
   fetch(`${JOKES_API}`)
@@ -20,17 +28,21 @@ function setJokeCard() {
       jokeType.textContent = `Joke Type: ${joke.category}`;
 
       fetch(`${USER_DATA}/likes`)
-        .then(response => response.json())
-        .then(count => {
-            const filter = count.filter(wanted => wanted.id === setup.dataset.currentId);
-            if (filter.length > 0) {
-                document.getElementById(`joke-rating`).textContent = `Rating: ${filter[0].likes}`;
-            } else {
-                document.getElementById(`joke-rating`).textContent = `Rating: 0`;
-            };
+        .then((response) => response.json())
+        .then((count) => {
+          const filter = count.filter(
+            (wanted) => wanted.id === setup.dataset.currentId
+          );
+          if (filter.length > 0) {
+            document.getElementById(
+              `joke-rating`
+            ).textContent = `Rating: ${filter[0].likes}`;
+          } else {
+            document.getElementById(`joke-rating`).textContent = `Rating: 0`;
+          }
         });
     });
-};
+}
 
 function changeJokeCard() {
   const next = document.querySelector(`button.button1`);
@@ -47,15 +59,19 @@ function changeJokeCard() {
         jokeType.textContent = `Joke Type: ${joke.category}`;
 
         fetch(`${USER_DATA}/likes`)
-        .then(response => response.json())
-        .then(count => {
-            const filter = count.filter(wanted => wanted.id === setup.dataset.currentId);
+          .then((response) => response.json())
+          .then((count) => {
+            const filter = count.filter(
+              (wanted) => wanted.id === setup.dataset.currentId
+            );
             if (filter.length > 0) {
-                document.getElementById(`joke-rating`).textContent = `Rating: ${filter[0].likes}`;
+              document.getElementById(
+                `joke-rating`
+              ).textContent = `Rating: ${filter[0].likes}`;
             } else {
-                document.getElementById(`joke-rating`).textContent = `Rating: 0`;
+              document.getElementById(`joke-rating`).textContent = `Rating: 0`;
             }
-        });
+          });
       });
   });
 
@@ -70,18 +86,22 @@ function changeJokeCard() {
         jokeType.textContent = `Joke Type: ${joke.category}`;
 
         fetch(`${USER_DATA}/likes`)
-        .then(response => response.json())
-        .then(count => {
-            const filter = count.filter(wanted => wanted.id === setup.dataset.currentId);
+          .then((response) => response.json())
+          .then((count) => {
+            const filter = count.filter(
+              (wanted) => wanted.id === setup.dataset.currentId
+            );
             if (filter.length > 0) {
-                document.getElementById(`joke-rating`).textContent = `Rating: ${filter[0].likes}`;
+              document.getElementById(
+                `joke-rating`
+              ).textContent = `Rating: ${filter[0].likes}`;
             } else {
-                document.getElementById(`joke-rating`).textContent = `Rating: 0`;
+              document.getElementById(`joke-rating`).textContent = `Rating: 0`;
             }
-        });
+          });
       });
   });
-};
+}
 
 function createCardButtons() {
   const cardFront = document.querySelector(`.flip-card-front`);
@@ -120,7 +140,9 @@ function createCardButtons() {
             .then((response) => response.json())
             .then((data) => {
               console.log("Success:", data);
-              document.getElementById(`joke-rating`).textContent = `Rating: ${data.likes}`;
+              document.getElementById(
+                `joke-rating`
+              ).textContent = `Rating: ${data.likes}`;
             })
             .catch((error) => {
               console.error("Error:", error);
@@ -136,7 +158,9 @@ function createCardButtons() {
             .then((response) => response.json())
             .then((data) => {
               console.log("Success:", data);
-              document.getElementById(`joke-rating`).textContent = `Rating: ${data.likes}`;
+              document.getElementById(
+                `joke-rating`
+              ).textContent = `Rating: ${data.likes}`;
             })
             .catch((error) => {
               console.error("Error:", error);
@@ -163,7 +187,9 @@ function createCardButtons() {
             .then((response) => response.json())
             .then((data) => {
               console.log("Success:", data);
-              document.getElementById(`joke-rating`).textContent = `Rating: ${data.likes}`;
+              document.getElementById(
+                `joke-rating`
+              ).textContent = `Rating: ${data.likes}`;
             })
             .catch((error) => {
               console.error("Error:", error);
@@ -179,7 +205,9 @@ function createCardButtons() {
             .then((response) => response.json())
             .then((data) => {
               console.log("Success:", data);
-              document.getElementById(`joke-rating`).textContent = `Rating: ${data.likes}`;
+              document.getElementById(
+                `joke-rating`
+              ).textContent = `Rating: ${data.likes}`;
             })
             .catch((error) => {
               console.error("Error:", error);
@@ -190,8 +218,8 @@ function createCardButtons() {
 
   cardBase.append(dislike, rating, like);
   cardBack.appendChild(cardBase);
-//   cardFront.appendChild(cardBase.cloneNode(true));
-};
+  //   cardFront.appendChild(cardBase.cloneNode(true));
+}
 
 // function createFilterButtons() {
 //     const hero = document.querySelector(`.hero`);
@@ -223,35 +251,35 @@ function createCardButtons() {
 //     });
 // };
 
-function setFilter() {
-    const pNode = document.querySelector(`.hero`).lastChild.children;
-    const pArray = Array.from(pNode);
+// function setFilter() {
+//     const pNode = document.querySelector(`.hero`).lastChild.children;
+//     const pArray = Array.from(pNode);
 
-    pArray.forEach(p => {
-        p.addEventListener(`click`, () => {
-          if(p.textContent !== `Most Likes DOES NOT WORK`) {
-            CURRENT_FILTER = `${NO_FILTER}/${p.textContent}${REQUIRED_FILTER}`;
-          } else {
-            console.log(`error: Most Likes is not finished`);
-          };
-        });
-    });
-};
+//     pArray.forEach(p => {
+//         p.addEventListener(`click`, () => {
+//           if(p.textContent !== `Most Likes DOES NOT WORK`) {
+//             CURRENT_FILTER = `${NO_FILTER}/${p.textContent}${REQUIRED_FILTER}`;
+//           } else {
+//             console.log(`error: Most Likes is not finished`);
+//           };
+//         });
+//     });
+// };
 
 function init() {
-    setJokeCard();
-    createCardButtons();
-    // createFilterButtons();
-    setFilter();
-    changeJokeCard();
-};
+  setJokeCard();
+  createCardButtons();
+  // createFilterButtons();
+  // setFilter();
+  changeJokeCard();
+}
 
 init();
 
 // ** MUSIC PLAYER STARTS **
-document.addEventListener('click', musicPlay);
+document.addEventListener("click", musicPlay);
 function musicPlay() {
-    // document.getElementById('playAudio').play();
-    // document.removeEventListener('click', musicPlay);
+  document.getElementById("playAudio").play();
+  document.removeEventListener("click", musicPlay);
 }
 // ** MUSIC PLAYER ENDS **

@@ -188,7 +188,7 @@ section {
   bottom: 0px;
   display: flex;
   flex-direction: row;
-  background: linear-gradient(to bottom, #3fbfff, #00AAFF);
+  background: linear-gradient(to bottom, #3fbfff, #00aaff);
   /* rgba(68, 68, 68, 0.116); 
   #74bbf1 */
   width: 100%;
@@ -314,7 +314,7 @@ section {
 /* TESTIMONIALS STARTS */
 
 .testimonials-section {
-  background: linear-gradient(to bottom, #1fb4ff, #6857ff);
+  background: linear-gradient(to bottom, #1fb4ff, #a6f78c);
   /* linear-gradient(to right, #00AAFF, rgb(240, 240, 87)) 
   #f26419 */
   overflow: hidden;
@@ -346,13 +346,13 @@ section {
 
 .blockquotes {
   font-weight: bold;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .info {
   float: left;
   width: 42%;
-  background: linear-gradient(to bottom, rgb(241, 193, 116), rgb(247, 158, 98));
+  background: linear-gradient(to bottom, #98DEEE , #00BCD4);
   /* linear-gradient(to right, rgb(24, 115, 138), #107e6b) */
   padding: 30px;
   border-radius: 20px;
@@ -376,12 +376,6 @@ section {
     color: antiquewhite;
     text-align: center;
     margin-bottom: 15px;
-  }
-
-  .info img {
-    width: 4em;
-    height: 4.5em;
-    border-radius: 2em;
   }
 }
 
