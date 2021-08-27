@@ -2,7 +2,7 @@ const JOKES_API = `https://v2.jokeapi.dev/joke/Any?safe-mode&type=twopart`;
 const NO_FILTER = `https://v2.jokeapi.dev/joke`;
 const REQUIRED_FILTER = `?safe-mode&type=twopart`;
 let CURRENT_FILTER = `https://v2.jokeapi.dev/joke/Any?safe-mode&type=twopart`;
-const USER_DATA = `http://localhost:3000`;
+const USER_DATA = `http://37.247.105.252:3000`;
 
 const setup = document.querySelector(`.setup`);
 const punchline = document.querySelector(`.puncline`);
@@ -25,7 +25,7 @@ function setJokeCard() {
       punchline.textContent = joke.delivery;
       setup.dataset.lastId = 1;
       setup.dataset.currentId = joke.id;
-
+      jokeType.textContent = `Joke Type: ${joke.category}`;
 
       fetch(`${USER_DATA}/likes`)
         .then((response) => response.json())
@@ -56,7 +56,7 @@ function changeJokeCard() {
         punchline.textContent = joke.delivery;
         setup.dataset.lastId = setup.dataset.currentId;
         setup.dataset.currentId = joke.id;
-
+        jokeType.textContent = `Joke Type: ${joke.category}`;
 
         fetch(`${USER_DATA}/likes`)
           .then((response) => response.json())
@@ -83,7 +83,7 @@ function changeJokeCard() {
         punchline.textContent = joke.delivery;
         setup.dataset.lastId = setup.dataset.currentId;
         setup.dataset.currentId = joke.id;
-
+        jokeType.textContent = `Joke Type: ${joke.category}`;
 
         fetch(`${USER_DATA}/likes`)
           .then((response) => response.json())
