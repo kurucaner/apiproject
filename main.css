@@ -281,8 +281,9 @@ section {
 
 .filter-visible {
   margin: auto;
+  padding: 10px;
   width: 150px;
-  height: 100px;
+  height: 150px;
 }
 
 .filter-visible > p {
@@ -314,7 +315,7 @@ section {
 /* TESTIMONIALS STARTS */
 
 .testimonials-section {
-  background: linear-gradient(to bottom, #1fb4ff, #a6f78c);
+  background: linear-gradient(to bottom, #1fb4ff, #8cf7c2);
   /* linear-gradient(to right, #00AAFF, rgb(240, 240, 87)) 
   #f26419 */
   overflow: hidden;
@@ -340,7 +341,7 @@ section {
 
 .testimonials-section li img {
   width: 4em;
-  height: 4.5em;
+  height: 4em;
   border-radius: 2em;
 }
 
